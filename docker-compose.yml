@@ -1,0 +1,29 @@
+version: '3.4'
+services:
+  jupyter:
+    #image: jupyter/base-notebook
+    build: ./my_Jupyter      #--> dockerfile in the same folder
+    container_name: jupyter
+    ports:
+      - '8888:8888'
+    user: '0'
+    volumes:
+         - ./my_Jupyter:/home/jovyan/work
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    ports:
+      - '8086:8086'   
+      - '8083:8083' 
+    volumes:
+      - ./my_InfluxDB:/var/lib/influxdb
+  grafana:
+    image: grafana/grafana
+    container_name: grafana0
+    ports:
+      - '3000:3000'
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-worldmap-panel,digrich-bubblechart-panel
+    volumes:
+      - ./my_Grafana:/var/lib/grafana
+  
