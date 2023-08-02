@@ -1,7 +1,7 @@
 # Energy-Monitor
 A real-time data visualization project which keeps track of Romania's electrical energy consumption and production. 
 
-Working in a Dockerized environment, using different tools, like #Grafana for the frontend and #Jupyter-Notebook for the backend, here is a data visualizaton project to monitorize the country's energy consumption and production.
+Working in a Dockerized environment, using different tools, like #Grafana for the frontend and #Jupyter-Notebook (as an open-source IDE for python) as backend, here is a data visualizaton project to monitorize the country's energy consumption and production.
 Using #pyhton-pandas to analyse and collect the data in an #InfluxDB database. 
 
 This is a whole integrated information system, where all of the #docker-containers for the tools are managed and automated in a .yml and a Docker- file.  
